@@ -8,24 +8,21 @@ EXECUTION STEPS
 
 To run as a web server
 
-1. Set rest port in app.py
-2. Run command python app.py
-
-To run as a standalone application
-1. Run python calculator.py
+1. Set rest port in webapp.py
+2. Run command python3 webapp.py
 
 
 TEST CASES
 ***********
 1. Calculator_test.py contains unit tests for calculator in standalone mode.
-2. Calculator rest_test.py contains unit tests for calculator in webapp.
+2. webproject/app_test.py contains unit tests for calculator in webapp.
 
 CURL COMMANDS
 ******************
 For Prefix Expression:
 
 curl -X POST \
-  http://0.0.0.0:105/calculator \
+  http://0.0.0.0:8081/calculator \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -d '{"prefixExpression" : "+ 1 2"}'
@@ -33,7 +30,7 @@ curl -X POST \
 
 For Infix Expression:
 curl -X POST \
-  http://0.0.0.0:105/calculator \
+  http://0.0.0.0:8081/calculator \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -H 'postman-token: 81ac1bbd-cb48-0ead-3542-e9fe33cf1c48' \

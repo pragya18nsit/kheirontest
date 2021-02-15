@@ -3,27 +3,26 @@ import math
 
 class Calc(object):
 
-    def evaluate(self, tokens):
+    def prefix_evaluate(self, tokens):
         token=tokens.popleft()
         if token=='+':
-            return self.evaluate(tokens)+self.evaluate(tokens)
+            return self.prefix_evaluate(tokens)+self.prefix_evaluate(tokens)
         elif token=='-':
-            return self.evaluate(tokens)-self.evaluate(tokens)
+            return self.prefix_evaluate(tokens)-self.prefix_evaluate(tokens)
         elif token=='*':
-            return self.evaluate(tokens)*self.evaluate(tokens)
+            return self.prefix_evaluate(tokens)*self.prefix_evaluate(tokens)
         elif token=='/':
-            return self.evaluate(tokens)/self.evaluate(tokens)
+            return self.prefix_evaluate(tokens)/self.prefix_evaluate(tokens)
         else:
              # must be just a number
             return math.floor(int(token))
 
     def prefix_calculator(self, expression):
-        return self.evaluate(deque(expression.split()))
+        return self.prefix_evaluate(deque(expression.split()))
 
 
 
     def infix_calculator(self, expression):
-        # print(self.to_suffix(string))
         token_list = expression.split()
              # Operator priority dictionary
         pre_dict = {'*':3,'/':3,'+':2,'-':2,'(':1}

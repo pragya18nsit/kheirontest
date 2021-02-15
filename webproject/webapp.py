@@ -8,14 +8,13 @@ app = Flask(__name__)
 
 from flask import request
 
-REST_PORT = 8080
+REST_PORT = 8081
 
-
-
-@app.route('/calculator/v1/', methods=['POST'])
+@app.route('/v1/calculator/', methods=['POST'])
 def calculator():
+    print(request.data)
     if not request.json or not ('prefixExpression' in request.json or 'infixExpression' in request.json):
-        abort(400)
+        return jsonify({'response': 'invalid expression'}), 400
     if request.json.get('prefixExpression'):
         expression = request.json['prefixExpression']
         print (expression)
