@@ -13,7 +13,7 @@ To run as a web server
 
 Run as a standalone application
 
-1. Run python3 inputCalculator.py to execute as a standalone application.
+1. Run python3 input_calculator.py to execute as a standalone application.
 
 TEST CASES
 ***********

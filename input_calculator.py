@@ -3,7 +3,7 @@ from Calculator import Calculator
 def get_user_input(infix_or_prefix):
 
     print("****** (Prefix/Infix)*********\n \nType q to exit\n")
-    calculator = Calculator()
+    calculator = Calc()
     while True:
         expression = input(">")
         if infix_or_prefix == 1:
