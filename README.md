@@ -9,8 +9,11 @@ EXECUTION STEPS
 To run as a web server
 
 1. Set rest port in webapp.py
-2. Run command python3 webapp.py
+2. cd webapp. Run command python3 webapp.py
 
+Run as a standalone application
+
+1. Run python3 inputCalculator.py to execute as a standalone application.
 
 TEST CASES
 ***********
